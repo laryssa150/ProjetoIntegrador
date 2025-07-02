@@ -151,9 +151,70 @@ border-radius: 50%;
     right: 45px;
 }
 
-.header-detalhes-produtos h1{
+* h1{
+    font-family: 'Segoe UI', sans-serif;
+    align-items: center;
+}
+
+
+.descricao-produto h3{
+
+    font-size: 16px; line-height: 1.5;
+
+    color: #333; margin-bottom: 10px;
+
+}
+
+.descricao-produto p{
+
+    font-size: 16px; line-height: 1.5;
+
+    color: #666; margin-bottom: 10px;
+
+}
+
+
+.produto-detalhes {
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+   
+
+}
+
+
+.detalhes-container{
+    display: flex;
+    flex-direction: column;
+    background: #f0f0f0;
+    margin-bottom: 10px;
+    cursor: pointer;
     font-family: 'Segoe UI', sans-serif;
 }
+.produto-detalhes img {
+    width: 120px; /* Tamanho fixo para todas as imagens */
+    height: 120px;
+    object-fit: cover; /* Garante que a imagem se encaixe sem distorcer */
+    border-radius: 8px; /* Opcional: bordas arredondadas */
+   
+}
+
+.descricao {
+    font-size: 1.1rem; /* Tamanho da descrição aumentado */
+    flex: 1; /* Ocupa o espaço restante ao lado da imagem */
+    color: #333;
+}
+
+* detalhes-container{
+    margin-bottom: 10px;
+}
+
 
 .hidden {
 
@@ -165,78 +226,188 @@ button {
 
     padding: 10px; margin: 5px 0; border: none;
 
-    background: #ccc; border-radius: 5px; cursor: pointer;
+    background: pink; border-radius: 5px; cursor: pointer;
 
 }
+
 
 button:hover {
 
-    background: #aaa;
+    background: rgb(255, 109, 133);
 
 }
 
-.calendar {
 
-    display: grid;
+/* Agenda */
 
-    grid-template-columns: repeat(7, 1fr);
-
-    gap: 5px;
-
-    margin: 10px 0;
-
-    user-select: none;
-
+.selecao-horario {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.calendar div {
+.selecao-horario label {
+  font-weight: bold;
+  color: #555;
+}
 
+#hora {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+#confirmarBtn {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #ff4db8;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#confirmarBtn:hover {
+  background-color: #d93f98;
+}
+
+.selecao-horario {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.selecao-horario label {
+  font-weight: bold;
+  color: #555;
+}
+
+#hora {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+#confirmarBtn {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #ff4db8;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#confirmarBtn:hover {
+  background-color: #d93f98;
+}
+
+
+
+  /* CARRINHO */
+
+  .header-carrinho img{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
 
-    text-align: center;
+  
 
-    background: #eee;
-
-    border-radius: 5px;
-
-    cursor: pointer;
-
+.carrinho-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff0f7;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-.calendar .selected {
-
-    background: #999;
-
-    color: white;
-
+.carrinho-container h1 {
+  text-align: center;
+  color: #ce4dc0;
+  margin-bottom: 20px;
 }
 
-.calendar .disabled {
-
-    background: #ddd;
-
-    cursor: default;
-
-    color: #999;
-
+.item-carrinho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  transition: 0.3s;
 }
 
-.weekdays {
-
-    display: grid;
-
-    grid-template-columns: repeat(7, 1fr);
-
-    gap: 5px;
-
-    margin-top: 10px;
-
+.item-carrinho img {
+  width: 80px;
+  border-radius: 8px;
 }
 
-.weekdays div {
+.info-item {
+  flex: 1;
+  margin-left: 15px;
+}
 
-    text-align: center;
+.info-item h3 {
+  margin: 0 0 5px;
+  font-size: 18px;
+  color: #333;
+}
 
-    font-weight: bold;
+.info-item p {
+  margin: 0;
+  color: #777;
+}
 
+.preco {
+  font-weight: bold;
+  color: #ce4dc0;
+  font-size: 18px;
+}
+
+.btn-remover {
+  background-color: #ff4d6d;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-remover:hover {
+  background-color: #d03c58;
+}
+
+.total {
+  text-align: right;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
+  padding-top: 15px;
+}
+
+@media (max-width: 600px) {
+  .item-carrinho {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px
+  }
 }

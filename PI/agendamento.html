@@ -1,161 +1,52 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 
 <head>
-
-  <meta charset="UTF-8" />
-
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-
-  <link rel="stylesheet" href="style.css"/>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Link para o ícone -->
-
-  <title>Serviços - Agendamento</title>
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agendamento</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 
-
-
 <body>
-
-    <main> <!-- Corpo da página -->
-
-        <header class="header-principal">
-
-            <h5>
-
-                <span>logo</span>
-
-                <img src="#" alt="#">
-
-                <span>login</span>
-
-                <img src="#" alt="#">
-
-            </h5>
-
-
-
-            <div class="icon-home">
-
-                <a href='/'><i class="fa-solid fa-house"></i></i></a>
-
-            </div>
-
-        </header>
-
-    
-
-        <!-- Página: Listagem -->
-
-        <div id="pageListagem" class="container"></div>
-
-        <div class="search">
-
-            <input type="text" id="searchInput" placeholder="Pesquisar serviços..."/>
-
+    <div class="agenda-container">
+        <div class="agenda-header">
+            <button onclick="mudarMes(-1)">◀</button>
+            <h2 id="mesAno"></h2>
+            <button onclick="mudarMes(1)">▶</button>
         </div>
 
-    
-
-        <!-- Página: Detalhes do Produto -->
-
-        <div id="pageDetalhes" class="container hidden">
-
-            <button onclick="voltarParaLista()">← Voltar</button>
-
-            <img id="detalhesImg" src="#" alt="Imagem da unha"/>
-
-            <h3 id="detalhesTitulo">Título: </h3>
-
-            <p id="detalhesPreco">Preço: </p>
-
-            <p id="detalhesDesc">Descrição: </p>
-
-            <button onclick="abrirAgendamento()">Agendar serviço</button>
-
-            <button onclick="adicionarCarrinho()">Adicionar ao carrinho</button>
-
+        <div class="dias-semana">
+            <div>Dom</div>
+            <div>Seg</div>
+            <div>Ter</div>
+            <div>Qua</div>
+            <div>Qui</div>
+            <div>Sex</div>
+            <div>Sáb</div>
         </div>
 
-    
-
-        <!-- Página: Agendamento -->
-
-        <div id="pageAgendamento" class="container hidden">
-
-            <button onclick="voltarParaDetalhes()">← Voltar</button>
-
-            <h2>Agendamento</h2>
-
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-
-            <button id="prevMonthBtn">←</button>
-
-            <p id="mesAno"></p>
-
-            <button id="nextMonthBtn">→</button>
-
+        <div class="dias" id="dias-container"></div>
+        <div class="selecao-horario">
+            <label for="hora">Escolha o horário:</label>
+            <select id="hora">
+                <option value="">--Selecione--</option>
+                <option>08:00</option>
+                <option>09:00</option>
+                <option>10:00</option>
+                <option>11:00</option>
+                <option>14:00</option>
+                <option>15:00</option>
+                <option>16:00</option>
+                <option>17:00</option>
+            </select>
         </div>
 
-    
+        <button id="confirmarBtn" onclick="confirmarAgendamento()">Confirmar Agendamento</button>
 
-        <div class="weekdays">
-
-            <div>Dom</div><div>Seg</div><div>Ter</div><div>Qua</div><div>Qui</div><div>Sex</div><div>Sab</div>
-
-        </div>
-
-        <div class="calendar" id="calendar"></div>
-
-    
-
-        <label for="horarioSelect">Escolha o horário:</label>
-
-
-
-        <select id="horarioSelect">
-
-            <option value="">-- Selecione um horário --</option>
-
-            <option value="09:00">09:00</option>
-
-            <option value="10:00">10:00</option>
-
-            <option value="11:00">11:00</option>
-
-            <option value="14:00">14:00</option>
-
-            <option value="15:00">15:00</option>
-
-            <option value="16:00">16:00</option>
-
-        </select>
-
-    
-
-        <div id="agendamentoInfo"></div>
-
-            <button id="confirmBtn" disabled>Marcar agendamento</button>
-
-            <h3>Agendamentos feitos</h3>
-
-            <div id="agendamentosList"></div>
-
-        </div>
-    </main>
-
-    <footer class="footer-principal">
-
-        <i class="fa-brands fa-instagram"></i>
-
-       <a href="https://www.instagram.com/daniela_fonsecanails?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">daniela_fonsecanails</a>
-    </footer>
+    </div>
 
     <script src="script.js"></script>
-
 </body>
 
 </html>

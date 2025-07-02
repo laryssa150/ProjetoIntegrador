@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <title>Seu Carrinho</title>
+</head>
+<body>
+
+  <header class="header-carrinho">
+    <img src="./imagens/logo PI.png" alt="Logo">
+    <div class="icon-voltar">
+      <a href="detalhes.html"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
+    </div>
+  </header>
+
+  <main class="carrinho-container">
+    <h1>Seu Carrinho</h1>
+
+    <table id="tabela-carrinho">
+      <thead>
+        <tr>
+          <th>Produto</th>
+          <th>Preço</th>
+          <th>Ação</th>
+        </tr>
+      </thead>
+      <tbody id="carrinho-body">
+        <!-- Os itens serão inseridos aqui via JavaScript -->
+      </tbody>
+    </table>
+
+    <p class="total" id="total">Total: R$ 0,00</p>
+
+    <button class="finalizar" onclick="finalizarCompra()">Finalizar Compra</button>
+  </main>
+
+  <script src="carrinho.js"></script>
+</body>
+</html>
