@@ -85,8 +85,6 @@ function confirmarAgendamento() {
   }
 }
 
-
-
 // carrinho.js
 
 // Exemplo de produtos no carrinho
