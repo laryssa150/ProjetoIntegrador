@@ -330,6 +330,23 @@ button:hover {
     transition: background-color 0.3s ease;
 }
 
+.dias-semana,.agenda-container #dias-container{
+  display: flex;
+    flex-direction: column;
+    background: #f0f0f0;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  .dias-semana,.agenda-container #dias-container{
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff0f7;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
 #confirmarBtn:hover {
   background-color: #d93f98;
 }
